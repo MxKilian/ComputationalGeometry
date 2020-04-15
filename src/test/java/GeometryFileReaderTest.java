@@ -1,6 +1,7 @@
+import linesegment.LineSegment;
 import org.junit.Test;
+import reader.FileReader;
 
-import java.awt.geom.Line2D;
 import java.util.List;
 
 public class GeometryFileReaderTest {

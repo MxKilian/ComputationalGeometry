@@ -1,4 +1,5 @@
-import java.awt.*;
+package linesegment;
+
 import java.awt.geom.Point2D;
 
 public class LineSegment {

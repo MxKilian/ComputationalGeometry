@@ -1,3 +1,7 @@
+package reader;
+
+import linesegment.LineSegment;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -6,7 +10,7 @@ import java.util.Scanner;
 
 public class FileReader {
 
-    static List<Double> readFile(String filePath) {
+    public static List<Double> readFile(String filePath) {
         File text = new File(filePath);
         Scanner sc = null;
         try {
@@ -23,7 +27,7 @@ public class FileReader {
         return doubleList;
     }
 
-    static List<LineSegment> convertToLineList(List<Double> doubleList) {
+    public static List<LineSegment> convertToLineList(List<Double> doubleList) {
         List<LineSegment> lineSegmentList = new ArrayList<>();
         for(int i = 0; i < doubleList.size(); i += 4) {
             double x1 = doubleList.get(i);
