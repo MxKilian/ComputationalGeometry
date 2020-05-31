@@ -8,7 +8,7 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class PolygonTest {
+public class Exercise02Test {
 
     private static ArrayList<String> counties = new ArrayList<>();
     private static ArrayList<String> cities = new ArrayList<>();

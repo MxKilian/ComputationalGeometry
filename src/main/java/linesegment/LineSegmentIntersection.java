@@ -7,6 +7,8 @@ import java.util.List;
 
 public class LineSegmentIntersection {
 
+    public static int interSectionCounter = 0;
+
     /**
      * Check if of three given colinear points p (firstPoint), q (secondPoint) and r (thirdPoint)
      * point q is placed on line segment qr
@@ -72,14 +74,14 @@ public class LineSegmentIntersection {
         return false;
     }
 
-    public static void doIntersectionCalculation(List<LineSegment> lineSegmentList) {
+    public static long doIntersectionCalculationForListOfSegments(List<LineSegment> lineSegmentList) {
 
         Instant start = Instant.now();
-        int overallIntersectionCounter = 0;
+        interSectionCounter = 0;
 
         for (int i = 0; i < lineSegmentList.size(); i += 1) {
             LineSegment lineSegmentToTestAgainst = lineSegmentList.get(i);
-            for (int j = 1; j < lineSegmentList.size(); j += 1) {
+            for (int j = i + 1; j < lineSegmentList.size(); j += 1) {
                 LineSegment lineSegment = lineSegmentList.get(j);
                 boolean doIntersect = LineSegmentIntersection.doIntersect(
                         lineSegmentToTestAgainst.getFirstPoint(),
@@ -89,15 +91,13 @@ public class LineSegmentIntersection {
                 );
 
                 if (doIntersect) {
-                    overallIntersectionCounter++;
+                    interSectionCounter++;
                 }
             }
         }
-
         Instant end = Instant.now();
-        System.out.println("Overall intersections: " + overallIntersectionCounter);
-        System.out.println("Time needed for execution (in ms): " + Duration.between(start, end).toMillis());
-        System.out.println("-------------------------------");
+
+        return Duration.between(start, end).toMillis();
     }
 
 }

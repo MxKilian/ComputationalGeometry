@@ -27,7 +27,7 @@ public class FileReader {
         return doubleList;
     }
 
-    public static List<LineSegment> convertToLineList(List<Double> doubleList) {
+    public static List<LineSegment> convertToLineSegmentList(List<Double> doubleList) {
         List<LineSegment> lineSegmentList = new ArrayList<>();
         for(int i = 0; i < doubleList.size(); i += 4) {
             double x1 = doubleList.get(i);
