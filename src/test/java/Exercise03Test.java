@@ -76,7 +76,6 @@ public class Exercise03Test {
         long sweepLineRunTime100000 = bentleyOttmann.findIntersections();
         long sweepLine100000Intersections = bentleyOttmann.intersections().size();
 
-        // assert(naiveAlgorithmRunTime100000 > sweepLineRunTime100000);
         System.out.println("Laufzeit naiver Algorithmus für s_100000 (in ms): " + naiveAlgorithmRunTime100000);
         System.out.println("Gefunde Schnittpunkte für s_100000: " + naiveAlgorithmIntersections100000);
         System.out.println("--------------------------------------------------------");
